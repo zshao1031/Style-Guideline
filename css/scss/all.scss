@@ -1,0 +1,277 @@
+/*【尺寸】*/
+$max-Width: 768px;
+
+/*【字體】*/
+$zh-Tw: 微軟正黑體;
+$en: 'Fjalla One';
+$fontWeight: 500;
+
+/*【大標題_尺寸】*/
+$mainSize_Zh-Tw: 40px;
+$mainSize_En: 24px;
+
+/*【中標題_尺寸】*/
+$secondarySize_Zh-Tw: 30px;
+$secondarySize_En: 16px;
+
+/*【小標題_尺寸】*/
+$tertiarySize_Zh-Tw: 20px;
+$tertiarySize_En: 12px;
+
+/*【品牌識別色彩】*/
+$viColor1: #ffb336;
+$viColor2: #27232F;
+$viColor3: #f3f7f7;
+$viColor4: #333333;
+
+/*【設定字體】*/
+@mixin setFont($family, $fontWeight, $size)
+{
+    font-family: $family;
+    font-weight: $fontWeight;
+    font-size: $size;
+}
+
+/*【設定尺寸】*/
+@mixin setSize($width, $height)
+{
+    width: $width;
+    height: $height;
+}
+
+/*【橫向+垂直置中】*/
+@mixin setCentered()
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/*======================================================*/
+/*【通用設定】*/
+
+/*使padding與border不會增加總寬度*/
+*,*:before,*:after{
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {color: #C8C8C8;}
+:-moz-placeholder {color: #C8C8C8;}
+::-moz-placeholder {color: #C8C8C8;}
+:-ms-input-placeholder {color: #C8C8C8;}
+
+.clearfix{
+	clear: both;
+}
+
+/*======================================================*/
+/*【基底樣式設定】*/
+
+.header
+{
+    position: relative;
+    @include setSize(100%, 300px);
+    background-color: $viColor2;
+}
+
+.wrap
+{
+    position: relative;
+    @include setSize(100%, auto);
+}
+
+.icon
+{
+    @include setSize(150px, auto);
+    @include setCentered();
+}
+
+.content
+{
+    position: relative;
+    max-width: $max-Width;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Fjalla One';
+    padding: 50px;
+}
+
+.unitTitle
+{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.titleList li
+{
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.title_En
+{
+    margin-top: 16px;
+}
+
+.titlehr
+{
+    margin-top: 16px;
+}
+
+.mainTitle_Zh-Tw { @include setFont($zh-Tw, $fontWeight, $mainSize_Zh-Tw); }
+.mainTitle_En { @include setFont($en, $fontWeight, $mainSize_En); }
+.titlehr
+{
+    position: relative;
+    border-bottom: solid 5px $viColor1;
+    width: 100px;
+}
+
+.secondaryTitle_Zh-Tw { @include setFont($zh-Tw, $fontWeight, $secondarySize_Zh-Tw); }
+.secondaryTitle_En { @include setFont($en, $fontWeight, $secondarySize_En); }
+.tertiaryTitle_Zh-Tw { @include setFont($zh-Tw, $fontWeight, $tertiarySize_Zh-Tw); }
+.tertiaryTitle_En { @include setFont($en, $fontWeight, $tertiarySize_En); }
+
+/*======================================================*/
+/*【viColors】*/
+
+.viColorList li
+{
+    display:inline-block;
+    margin-right: 30px;
+}
+
+.viColor_Tag
+{
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+}
+
+.viColor_Block
+{
+    display: inline-block;
+    vertical-align: middle;
+    @include setSize(30px, 30px);
+}
+
+.viColor_Block_Color1 { background-color: $viColor1; }
+.viColor_Block_Color2 { background-color: $viColor2; }
+.viColor_Block_Color3 { background-color: $viColor3; }
+.viColor_Block_Color4 { background-color: $viColor4; }
+
+
+/*======================================================*/
+/*【buttomSample】*/
+
+.buttonSample
+{
+    position: relative;
+    float: left;
+    padding: 5px 25px 5px 25px;
+    margin-right: 10px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
+/*======================================================*/
+/*【各配色樣式設定】*/
+
+.wrap_Style1
+{
+    background-color: $viColor3;
+    & .unitTitle { color: $viColor2; }
+    & .mainTitle_Zh-Tw { color: $viColor2; }
+    & .mainTitle_En { color: $viColor2; }
+    & .secondaryTitle_Zh-Tw { color: $viColor2; }
+    & .secondaryTitle_En { color: $viColor2; }
+    & .tertiaryTitle_Zh-Tw { color: $viColor2; }
+    & .tertiaryTitle_En { color: $viColor2; }
+    & .viColor_Tag { color: $viColor2; }
+    & .viColor_Block { border: solid 2px $viColor2; }
+    & .buttonSample { border: solid 1px $viColor2; }
+    & .buttonSample_1
+        {
+            color: $viColor2;
+            background-color: $viColor3;
+        }
+    & .buttonSample_2
+        {
+            color: $viColor3;
+            background-color: $viColor2;
+        }
+    & .buttonSample_3
+        {
+            color: $viColor2;
+            background-color: $viColor1;
+        }
+}
+
+.wrap_Style2
+{
+    background-color: $viColor4;
+    & .unitTitle { color: $viColor3; }
+    & .mainTitle_Zh-Tw { color: $viColor3; }
+    & .mainTitle_En { color: $viColor1; }
+    & .secondaryTitle_Zh-Tw { color: $viColor3; }
+    & .secondaryTitle_En { color: $viColor1; }
+    & .tertiaryTitle_Zh-Tw { color: $viColor3; }
+    & .tertiaryTitle_En { color: $viColor1; }
+    & .viColor_Tag { color: $viColor3; }
+    & .viColor_Block { border: solid 2px $viColor3 ; }
+    & .buttonSample { border: solid 1px $viColor3; }
+    & .buttonSample_1
+        {
+            color: $viColor3;
+            background-color: $viColor4;
+        }
+    & .buttonSample_2
+        {
+            color: $viColor3;
+            background-color: $viColor2;
+        }
+    & .buttonSample_3
+        {
+            color: $viColor2;
+            background-color: $viColor1;
+        }
+}
+
+.wrap_Style3
+{
+    background-color: $viColor2;
+    & .unitTitle { color: $viColor3; }
+    & .mainTitle_Zh-Tw { color: $viColor3; }
+    & .mainTitle_En { color: $viColor1; }
+    & .secondaryTitle_Zh-Tw { color: $viColor3; }
+    & .secondaryTitle_En { color: $viColor1; }
+    & .tertiaryTitle_Zh-Tw { color: $viColor3; }
+    & .tertiaryTitle_En { color: $viColor1; }
+    & .viColor_Tag { color: $viColor3; }
+    & .viColor_Block { border: solid 2px $viColor3 ; }
+    & .buttonSample { border: solid 1px $viColor3; }
+    & .buttonSample_1
+        {
+            color: $viColor3;
+            background-color: $viColor2;
+        }
+    & .buttonSample_2
+        {
+            color: $viColor3;
+            background-color: $viColor4;
+        }
+    & .buttonSample_3
+        {
+            color: $viColor2;
+            background-color: $viColor1;
+        }
+}
