@@ -5,6 +5,8 @@ $max-Width: 768px;
 $zh-Tw: 微軟正黑體;
 $en: 'Fjalla One';
 $fontWeight: 500;
+$fontWeight_BrightBackground: bold;
+$fontWeight_DarkBackground: 500;
 
 /*【大標題_尺寸】*/
 $mainSize_Zh-Tw: 40px;
@@ -19,18 +21,10 @@ $tertiarySize_Zh-Tw: 20px;
 $tertiarySize_En: 12px;
 
 /*【品牌識別色彩】*/
-$viColor1: #ffb336;
-$viColor2: #27232F;
-$viColor3: #f3f7f7;
-$viColor4: #333333;
-
-/*【設定字體】*/
-@mixin setFont($family, $fontWeight, $size)
-{
-    font-family: $family;
-    font-weight: $fontWeight;
-    font-size: $size;
-}
+$viColor_Yellow: #ffb336;
+$viColor_Blue: #27232F;
+$viColor_White: #f3f7f7;
+$viColor_Grey: #333333;
 
 /*【設定尺寸】*/
 @mixin setSize($width, $height)
@@ -75,13 +69,7 @@ $viColor4: #333333;
 {
     position: relative;
     @include setSize(100%, 300px);
-    background-color: $viColor2;
-}
-
-.wrap
-{
-    position: relative;
-    @include setSize(100%, auto);
+    background-color: $viColor_Blue;
 }
 
 .icon
@@ -90,13 +78,20 @@ $viColor4: #333333;
     @include setCentered();
 }
 
+.wrap
+{
+    position: relative;
+    @include setSize(100%, auto);
+}
+
 .content
 {
     position: relative;
     max-width: $max-Width;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Fjalla One';
+    font-family: $en, $zh-Tw;
+    font-weight: $fontWeight;
     padding: 50px;
 }
 
@@ -114,29 +109,24 @@ $viColor4: #333333;
     margin-bottom: 60px;
 }
 
+.mainTitle_Zh-Tw { font-size: $mainSize_Zh-Tw; }
+.mainTitle_En { font-size:  $mainSize_En; }
+.titlehr
+{
+    position: relative;
+    border-bottom: solid 5px $viColor_Yellow;
+    width: 100px;
+    margin-top: 16px;
+}
+.secondaryTitle_Zh-Tw { font-size: $secondarySize_Zh-Tw; }
+.secondaryTitle_En { font-size: $secondarySize_En; }
+.tertiaryTitle_Zh-Tw { font-size: $tertiarySize_Zh-Tw; }
+.tertiaryTitle_En { font-size: $tertiarySize_En; }
+
 .title_En
 {
     margin-top: 16px;
 }
-
-.titlehr
-{
-    margin-top: 16px;
-}
-
-.mainTitle_Zh-Tw { @include setFont($zh-Tw, $fontWeight, $mainSize_Zh-Tw); }
-.mainTitle_En { @include setFont($en, $fontWeight, $mainSize_En); }
-.titlehr
-{
-    position: relative;
-    border-bottom: solid 5px $viColor1;
-    width: 100px;
-}
-
-.secondaryTitle_Zh-Tw { @include setFont($zh-Tw, $fontWeight, $secondarySize_Zh-Tw); }
-.secondaryTitle_En { @include setFont($en, $fontWeight, $secondarySize_En); }
-.tertiaryTitle_Zh-Tw { @include setFont($zh-Tw, $fontWeight, $tertiarySize_Zh-Tw); }
-.tertiaryTitle_En { @include setFont($en, $fontWeight, $tertiarySize_En); }
 
 /*======================================================*/
 /*【viColors】*/
@@ -161,10 +151,10 @@ $viColor4: #333333;
     @include setSize(30px, 30px);
 }
 
-.viColor_Block_Color1 { background-color: $viColor1; }
-.viColor_Block_Color2 { background-color: $viColor2; }
-.viColor_Block_Color3 { background-color: $viColor3; }
-.viColor_Block_Color4 { background-color: $viColor4; }
+.viColor_Block_Color1 { background-color: $viColor_Yellow; }
+.viColor_Block_Color2 { background-color: $viColor_Blue; }
+.viColor_Block_Color3 { background-color: $viColor_White; }
+.viColor_Block_Color4 { background-color: $viColor_Grey; }
 
 
 /*======================================================*/
@@ -188,90 +178,93 @@ $viColor4: #333333;
 
 .wrap_Style1
 {
-    background-color: $viColor3;
-    & .unitTitle { color: $viColor2; }
-    & .mainTitle_Zh-Tw { color: $viColor2; }
-    & .mainTitle_En { color: $viColor2; }
-    & .secondaryTitle_Zh-Tw { color: $viColor2; }
-    & .secondaryTitle_En { color: $viColor2; }
-    & .tertiaryTitle_Zh-Tw { color: $viColor2; }
-    & .tertiaryTitle_En { color: $viColor2; }
-    & .viColor_Tag { color: $viColor2; }
-    & .viColor_Block { border: solid 2px $viColor2; }
-    & .buttonSample { border: solid 1px $viColor2; }
+    background-color: $viColor_White;
+    & .unitTitle { color: $viColor_Blue; }
+    & .titleList li { font-weight: $fontWeight_BrightBackground; }
+    & .mainTitle_Zh-Tw { color: $viColor_Blue; }
+    & .mainTitle_En { color: $viColor_Blue; }
+    & .secondaryTitle_Zh-Tw { color: $viColor_Blue; }
+    & .secondaryTitle_En { color: $viColor_Blue; }
+    & .tertiaryTitle_Zh-Tw { color: $viColor_Blue; }
+    & .tertiaryTitle_En { color: $viColor_Blue; }
+    & .viColor_Tag { color: $viColor_Blue; }
+    & .viColor_Block { border: solid 2px $viColor_Blue; }
+    & .buttonSample { border: solid 1px $viColor_Blue; }
     & .buttonSample_1
         {
-            color: $viColor2;
-            background-color: $viColor3;
+            color: $viColor_Blue;
+            background-color: $viColor_White;
         }
     & .buttonSample_2
         {
-            color: $viColor3;
-            background-color: $viColor2;
+            color: $viColor_White;
+            background-color: $viColor_Blue;
         }
     & .buttonSample_3
         {
-            color: $viColor2;
-            background-color: $viColor1;
+            color: $viColor_Blue;
+            background-color: $viColor_Yellow;
         }
 }
 
 .wrap_Style2
 {
-    background-color: $viColor4;
-    & .unitTitle { color: $viColor3; }
-    & .mainTitle_Zh-Tw { color: $viColor3; }
-    & .mainTitle_En { color: $viColor1; }
-    & .secondaryTitle_Zh-Tw { color: $viColor3; }
-    & .secondaryTitle_En { color: $viColor1; }
-    & .tertiaryTitle_Zh-Tw { color: $viColor3; }
-    & .tertiaryTitle_En { color: $viColor1; }
-    & .viColor_Tag { color: $viColor3; }
-    & .viColor_Block { border: solid 2px $viColor3 ; }
-    & .buttonSample { border: solid 1px $viColor3; }
+    background-color: $viColor_Grey;
+    & .unitTitle { color: $viColor_White; }
+    & .titleList li { font-weight: $fontWeight_DarkBackground; }
+    & .mainTitle_Zh-Tw { color: $viColor_White; }
+    & .mainTitle_En { color: $viColor_Yellow; }
+    & .secondaryTitle_Zh-Tw { color: $viColor_White; }
+    & .secondaryTitle_En { color: $viColor_Yellow; }
+    & .tertiaryTitle_Zh-Tw { color: $viColor_White; }
+    & .tertiaryTitle_En { color: $viColor_Yellow; }
+    & .viColor_Tag { color: $viColor_White; }
+    & .viColor_Block { border: solid 2px $viColor_White ; }
+    & .buttonSample { border: solid 1px $viColor_White; }
     & .buttonSample_1
         {
-            color: $viColor3;
-            background-color: $viColor4;
+            color: $viColor_White;
+            background-color: $viColor_Grey;
         }
     & .buttonSample_2
         {
-            color: $viColor3;
-            background-color: $viColor2;
+            color: $viColor_White;
+            background-color: $viColor_Blue;
         }
     & .buttonSample_3
         {
-            color: $viColor2;
-            background-color: $viColor1;
+            color: $viColor_Blue;
+            background-color: $viColor_Yellow;
         }
 }
 
 .wrap_Style3
 {
-    background-color: $viColor2;
-    & .unitTitle { color: $viColor3; }
-    & .mainTitle_Zh-Tw { color: $viColor3; }
-    & .mainTitle_En { color: $viColor1; }
-    & .secondaryTitle_Zh-Tw { color: $viColor3; }
-    & .secondaryTitle_En { color: $viColor1; }
-    & .tertiaryTitle_Zh-Tw { color: $viColor3; }
-    & .tertiaryTitle_En { color: $viColor1; }
-    & .viColor_Tag { color: $viColor3; }
-    & .viColor_Block { border: solid 2px $viColor3 ; }
-    & .buttonSample { border: solid 1px $viColor3; }
+    background-color: $viColor_Blue;
+    & .unitTitle { color: $viColor_White; }
+    & .titleList li { font-weight: $fontWeight_DarkBackground; }
+    & .mainTitle_Zh-Tw { color: $viColor_White; }
+    & .mainTitle_En { color: $viColor_Yellow; }
+    & .secondaryTitle_Zh-Tw { color: $viColor_White; }
+    & .secondaryTitle_En { color: $viColor_Yellow; }
+    & .tertiaryTitle_Zh-Tw { color: $viColor_White; }
+    & .tertiaryTitle_En { color: $viColor_Yellow; }
+    & .viColor_Tag { color: $viColor_White; }
+    & .viColor_Block { border: solid 2px $viColor_White ; }
+    & .buttonSample { border: solid 1px $viColor_White; }
     & .buttonSample_1
         {
-            color: $viColor3;
-            background-color: $viColor2;
+            color: $viColor_White;
+            background-color: $viColor_Blue;
         }
     & .buttonSample_2
         {
-            color: $viColor3;
-            background-color: $viColor4;
+            color: $viColor_White;
+            background-color: $viColor_Grey;
         }
     & .buttonSample_3
         {
-            color: $viColor2;
-            background-color: $viColor1;
+            color: $viColor_Blue;
+            background-color: $viColor_Yellow;
         }
 }

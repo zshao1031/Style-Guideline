@@ -5,7 +5,6 @@
 /*【中標題_尺寸】*/
 /*【小標題_尺寸】*/
 /*【品牌識別色彩】*/
-/*【設定字體】*/
 /*【設定尺寸】*/
 /*【橫向+垂直置中】*/
 /*======================================================*/
@@ -45,12 +44,6 @@
   background-color: #27232F;
 }
 
-.wrap {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
 .icon {
   width: 150px;
   height: auto;
@@ -61,12 +54,19 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+.wrap {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
 .content {
   position: relative;
   max-width: 768px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Fjalla One';
+  font-family: "Fjalla One", 微軟正黑體;
+  font-weight: 500;
   padding: 50px;
 }
 
@@ -82,23 +82,11 @@
   margin-bottom: 60px;
 }
 
-.title_En {
-  margin-top: 16px;
-}
-
-.titlehr {
-  margin-top: 16px;
-}
-
 .mainTitle_Zh-Tw {
-  font-family: 微軟正黑體;
-  font-weight: 500;
   font-size: 40px;
 }
 
 .mainTitle_En {
-  font-family: "Fjalla One";
-  font-weight: 500;
   font-size: 24px;
 }
 
@@ -106,30 +94,27 @@
   position: relative;
   border-bottom: solid 5px #ffb336;
   width: 100px;
+  margin-top: 16px;
 }
 
 .secondaryTitle_Zh-Tw {
-  font-family: 微軟正黑體;
-  font-weight: 500;
   font-size: 30px;
 }
 
 .secondaryTitle_En {
-  font-family: "Fjalla One";
-  font-weight: 500;
   font-size: 16px;
 }
 
 .tertiaryTitle_Zh-Tw {
-  font-family: 微軟正黑體;
-  font-weight: 500;
   font-size: 20px;
 }
 
 .tertiaryTitle_En {
-  font-family: "Fjalla One";
-  font-weight: 500;
   font-size: 12px;
+}
+
+.title_En {
+  margin-top: 16px;
 }
 
 /*======================================================*/
@@ -188,6 +173,10 @@
 
 .wrap_Style1 .unitTitle {
   color: #27232F;
+}
+
+.wrap_Style1 .titleList li {
+  font-weight: bold;
 }
 
 .wrap_Style1 .mainTitle_Zh-Tw {
@@ -249,6 +238,10 @@
   color: #f3f7f7;
 }
 
+.wrap_Style2 .titleList li {
+  font-weight: 500;
+}
+
 .wrap_Style2 .mainTitle_Zh-Tw {
   color: #f3f7f7;
 }
@@ -306,6 +299,10 @@
 
 .wrap_Style3 .unitTitle {
   color: #f3f7f7;
+}
+
+.wrap_Style3 .titleList li {
+  font-weight: 500;
 }
 
 .wrap_Style3 .mainTitle_Zh-Tw {
