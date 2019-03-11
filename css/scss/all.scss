@@ -168,7 +168,26 @@ $viColor_Grey: #333333;
     font-weight: bold;
 }
 
+/*======================================================*/
+/*【Logo來源聲明】*/
 
+.footer
+{
+    position: relative;
+    @include setSize(100%, auto);
+    background-color: grey;
+}
+
+.statement
+{
+    position: relative;
+    max-width: $max-Width;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $en, $zh-Tw;
+    font-weight: $fontWeight;
+    padding: 5px 50px;
+}
 
 /*======================================================*/
 /*【各配色樣式設定】*/
