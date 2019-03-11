@@ -8,17 +8,14 @@ $fontWeight: 500;
 $fontWeight_BrightBackground: bold;
 $fontWeight_DarkBackground: 500;
 
-/*【大標題_尺寸】*/
-$mainSize_Zh-Tw: 40px;
-$mainSize_En: 24px;
-
-/*【中標題_尺寸】*/
-$secondarySize_Zh-Tw: 30px;
-$secondarySize_En: 16px;
-
-/*【小標題_尺寸】*/
-$tertiarySize_Zh-Tw: 20px;
-$tertiarySize_En: 12px;
+/*【字體尺寸】*/
+$baseSize: 10px;
+$mainSize_Zh-Tw: $baseSize*4;
+$mainSize_En: $baseSize*2.4;
+$secondarySize_Zh-Tw: $baseSize*3;
+$secondarySize_En: $baseSize*1.6;
+$tertiarySize_Zh-Tw: $baseSize*2;
+$tertiarySize_En: $baseSize*1.2;
 
 /*【品牌識別色彩】*/
 $viColor_Yellow: #ffb336;
@@ -97,7 +94,7 @@ $viColor_Grey: #333333;
 
 .unitTitle
 {
-    font-size: 16px;
+    font-size: $baseSize*1.6;
     font-weight: 500;
     margin-top: 12px;
     margin-bottom: 20px;
